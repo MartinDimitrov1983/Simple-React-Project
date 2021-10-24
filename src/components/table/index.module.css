@@ -1,0 +1,15 @@
+table {
+    width: 80%;
+}
+
+table,
+th,
+td {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
