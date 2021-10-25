@@ -4,8 +4,6 @@ exports[`Snapshot Button 1`] = `
 <DocumentFragment>
   <button
     class="btn"
-  >
-      
-  </button>
+  />
 </DocumentFragment>
 `;
