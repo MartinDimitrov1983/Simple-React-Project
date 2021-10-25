@@ -24,6 +24,7 @@ exports[`Snapshot Form 1`] = `
         id="name"
         name="name"
         placeholder="Name"
+        required=""
         type="text"
         value=""
       />
@@ -42,6 +43,7 @@ exports[`Snapshot Form 1`] = `
         id="plan"
         name="plan"
         placeholder="Plan Number"
+        required=""
         type="text"
         value=""
       />
@@ -60,7 +62,8 @@ exports[`Snapshot Form 1`] = `
         id="units"
         name="units"
         placeholder="Units"
-        type="text"
+        required=""
+        type="number"
         value=""
       />
     </div>
@@ -78,6 +81,7 @@ exports[`Snapshot Form 1`] = `
         id="city"
         name="city"
         placeholder="City"
+        required=""
         type="text"
         value=""
       />
@@ -96,7 +100,8 @@ exports[`Snapshot Form 1`] = `
         id="region"
         name="region"
         placeholder="Region"
-        type="text"
+        required=""
+        type="number"
         value=""
       />
     </div>
@@ -114,7 +119,8 @@ exports[`Snapshot Form 1`] = `
         id="manager"
         name="manager"
         placeholder="Manager"
-        type="text"
+        required=""
+        type="number"
         value=""
       />
     </div>
@@ -132,7 +138,8 @@ exports[`Snapshot Form 1`] = `
         id="previous-manager"
         name="previousManager"
         placeholder="Previous Manager"
-        type="text"
+        required=""
+        type="number"
         value=""
       />
     </div>
@@ -150,6 +157,7 @@ exports[`Snapshot Form 1`] = `
         id="management-company"
         name="managementCompany"
         placeholder="Management Company"
+        required=""
         type="text"
         value=""
       />
@@ -168,6 +176,7 @@ exports[`Snapshot Form 1`] = `
         id="plan-registered"
         name="planRegistered"
         placeholder="Plan Registered"
+        required=""
         type="date"
         value=""
       />
@@ -186,6 +195,7 @@ exports[`Snapshot Form 1`] = `
         id="address"
         name="address"
         placeholder="Address"
+        required=""
         type="text"
         value=""
       />
@@ -204,6 +214,7 @@ exports[`Snapshot Form 1`] = `
         id="account"
         name="account"
         placeholder="Account"
+        required=""
         type="text"
         value=""
       />
@@ -222,6 +233,7 @@ exports[`Snapshot Form 1`] = `
         id="abn"
         name="abn"
         placeholder="abn"
+        required=""
         type="text"
         value=""
       />

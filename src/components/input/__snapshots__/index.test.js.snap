@@ -12,6 +12,7 @@ exports[`Snapshot Input 1`] = `
     </label>
     <input
       class="formControl"
+      required=""
       value=""
     />
   </div>
