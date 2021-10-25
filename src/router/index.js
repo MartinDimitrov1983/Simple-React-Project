@@ -4,14 +4,32 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from '../pages/home'
 import CreatePage from '../pages/create'
 import EditPage from '../pages/edit'
-
+const ROUTES = [
+    {
+        route: '/',
+        component: Home,
+    },
+    {
+        route: '/create',
+        component: CreatePage,
+    },
+    {
+        route: '/edit/:id',
+        component: EditPage,
+    },
+]
 const Navigation = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/create" component={CreatePage} />
-                <Route path="/edit/:id" component={EditPage}></Route>
+                {ROUTES.map((route, index) => (
+                    <Route
+                        key={`key-${index}`}
+                        path={route.route}
+                        exact
+                        component={route.component}
+                    />
+                ))}
             </Switch>
         </BrowserRouter>
     )

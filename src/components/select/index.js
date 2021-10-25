@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-//import styles from './index.module.css'
+import React from 'react'
+import styles from './index.module.css'
 
 const Select = ({ data, value, setValue, ...props }) => {
     const onChange = (e) => {
@@ -7,7 +7,12 @@ const Select = ({ data, value, setValue, ...props }) => {
     }
 
     return (
-        <select value={value} onChange={onChange} {...props}>
+        <select
+            className={styles.select}
+            value={value}
+            onChange={onChange}
+            {...props}
+        >
             <option value={'none'}>Choose Region</option>
             {data?.map((value, index) => (
                 <option key={`${value.id}-${index}`} value={value.name}>

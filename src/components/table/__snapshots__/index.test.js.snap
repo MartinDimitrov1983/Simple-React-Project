@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Table 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <table>
+      <thead>
+        <tr>
+          <th>
+            name
+          </th>
+          <th>
+            plan
+          </th>
+          <th>
+            units
+          </th>
+          <th>
+            city
+          </th>
+          <th>
+            region
+          </th>
+          <th>
+            manager
+          </th>
+          <th />
+          <th />
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</DocumentFragment>
+`;

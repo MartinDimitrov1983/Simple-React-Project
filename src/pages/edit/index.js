@@ -5,28 +5,28 @@ import { getProperty, updateProperty } from '../../services/services'
 
 const EditPage = () => {
     const history = useHistory()
-    const params = useParams()
+    const { id } = useParams()
+
     const [properties, setProperties] = useState()
 
     const getData = useCallback(async () => {
-        const id = Number(params.id)
-        const prop = await getProperty(id)
+        const propId = Number(id)
+        const prop = await getProperty(propId)
         setProperties(prop)
-    }, [params.id])
-
-    const handleSubmit = async (event) => {
-        event.preventDefault()
-
-        const id = Number(params.id)
-        const body = { ...properties, id }
-        console.log(body)
-        await updateProperty(body)
-        history.push(`/`)
-    }
+    }, [id])
 
     useEffect(() => {
         getData()
     }, [getData])
+
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+
+        const propId = Number(id)
+        const body = { ...properties, id: propId }
+        await updateProperty(body)
+        history.push(`/`)
+    }
 
     return (
         <Form

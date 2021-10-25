@@ -4,7 +4,7 @@ import { useHistory } from 'react-router'
 import Form from '../../components/form'
 import { createProperty } from '../../services/services'
 
-const CrateTrekPage = () => {
+const CratePage = () => {
     const [properties, setProperties] = useState({})
     const history = useHistory()
 
@@ -24,4 +24,4 @@ const CrateTrekPage = () => {
     )
 }
 
-export default CrateTrekPage
+export default CratePage

@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { deleteProperty } from '../../services/services'
 import Button from '../button'
 
 const TableRow = ({
@@ -11,8 +10,9 @@ const TableRow = ({
     ...props
 }) => {
     const history = useHistory()
+
     const tableRowData = Object.values(tableCells)
-    //const context = useContext(AppContext)
+    const [id] = tableRowData
 
     const onEdit = (id) => {
         history.push(`/edit/${id}`)
@@ -21,26 +21,16 @@ const TableRow = ({
     return (
         <tr {...props}>
             {tableRowData.map((value, index) => {
-                if (index === 0) {
-                    return
-                }
-
-                return <Tag key={index}>{value}</Tag>
+                return index > 0 && <Tag key={index}>{value}</Tag>
             })}
             <Tag>
                 {isBodyRow && (
-                    <Button
-                        title="Edit"
-                        onClick={() => onEdit(tableRowData[0])}
-                    />
+                    <Button title="Edit" onClick={() => onEdit(id)} />
                 )}
             </Tag>
             <Tag>
                 {isBodyRow && (
-                    <Button
-                        title="Delete"
-                        onClick={() => onDelete(tableRowData[0])}
-                    />
+                    <Button title="Delete" onClick={() => onDelete(id)} />
                 )}
             </Tag>
         </tr>

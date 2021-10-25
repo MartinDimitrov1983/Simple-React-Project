@@ -31,7 +31,7 @@ const Form = ({ handleSubmit, properties, setProperties }) => {
             />
             <Input
                 id="units"
-                type="text"
+                type="number"
                 name="units"
                 placeHolder="Units"
                 label="Units"
@@ -53,7 +53,7 @@ const Form = ({ handleSubmit, properties, setProperties }) => {
             />
             <Input
                 id="region"
-                type="text"
+                type="number"
                 name="region"
                 placeHolder="Region"
                 label="Region"
@@ -64,7 +64,7 @@ const Form = ({ handleSubmit, properties, setProperties }) => {
             />
             <Input
                 id="manager"
-                type="text"
+                type="number"
                 name="manager"
                 placeHolder="Manager"
                 label="Manager"
@@ -75,7 +75,7 @@ const Form = ({ handleSubmit, properties, setProperties }) => {
             />
             <Input
                 id="previous-manager"
-                type="text"
+                type="number"
                 name="previousManager"
                 placeHolder="Previous Manager"
                 label="Previous Manage"
@@ -103,7 +103,7 @@ const Form = ({ handleSubmit, properties, setProperties }) => {
             />
             <Input
                 id="plan-registered"
-                type="text"
+                type="date"
                 name="planRegistered"
                 placeHolder="Plan Registered"
                 label="Plan Registered"
@@ -148,7 +148,7 @@ const Form = ({ handleSubmit, properties, setProperties }) => {
                     setProperties({ ...properties, abn: e.target.value })
                 }
             />
-            <Button title="Save" type="submit" onClick={handleSubmit} />
+            <Button title="Save" type="submit" />
         </form>
     )
 }

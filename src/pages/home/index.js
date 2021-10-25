@@ -4,12 +4,8 @@ import Header from '../../components/header'
 import Button from '../../components/button'
 import styles from './index.module.css'
 import { useHistory } from 'react-router'
-import {
-    getProperties,
-    getRegion,
-    getManager,
-    deleteProperty,
-} from '../../services/services'
+import { deleteProperty } from '../../services/services'
+import { fetchData } from '../../utils/fetchData'
 
 const HomePage = () => {
     const history = useHistory()
@@ -20,38 +16,9 @@ const HomePage = () => {
     const [regions, setRegions] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    const fetchData = async () => {
-        const props = await getProperties()
-        const regions = await getRegion()
-        const mappedProps = []
-
-        for (let i = 0; i < props.length; i++) {
-            const propsRegion = regions.find(
-                (region) => region.id === props[i].region
-            )
-            const manager = await getManager(props[i].manager)
-            console.log('myLog', i, propsRegion)
-            const currentProp = {
-                ...props[i],
-                region: propsRegion.name,
-                manager: `${manager?.firstName} ${manager?.lastName}`,
-            }
-
-            mappedProps.push(currentProp)
-        }
-
-        setProperties(mappedProps)
-        setRegions(regions)
-        setLoading(false)
-    }
-
     useEffect(() => {
-        fetchData()
+        fetchData(setProperties, setRegions, setLoading)
     }, [])
-
-    if (loading) {
-        return <div>Loading....</div>
-    }
 
     const filterBy = (value, properties) => {
         return value !== 'none'
@@ -75,7 +42,11 @@ const HomePage = () => {
 
     const onDelete = async (id) => {
         await deleteProperty(id)
-        await fetchData()
+        await fetchData(setProperties, setRegions, setLoading)
+    }
+
+    if (loading) {
+        return <div>Loading....</div>
     }
 
     return (

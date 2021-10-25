@@ -24,12 +24,3 @@ p {
 input {
     flex-grow: 1;
 }
-
-.button {
-    width: 100px;
-}
-
-.select {
-    height: 40px;
-    width: 150px;
-}

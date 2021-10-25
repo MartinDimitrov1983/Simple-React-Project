@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import Select from '../select'
 import Button from '../button'
 import styles from './index.module.css'
@@ -12,6 +12,10 @@ const Header = ({
     setValue,
     ...props
 }) => {
+    const onChange = (e) => {
+        setSearchValue(e.target.value)
+        toggleSearch(false)
+    }
     return (
         <div className={styles.container} {...props}>
             <p>
@@ -26,10 +30,7 @@ const Header = ({
                         name="search-value"
                         placeholder="Enter name or plan number"
                         value={searchValue}
-                        onChange={(e) => {
-                            setSearchValue(e.target.value)
-                            toggleSearch(false)
-                        }}
+                        onChange={onChange}
                     />
                     <Button
                         title="Search"
@@ -38,12 +39,7 @@ const Header = ({
                     />
                 </div>
                 <div>
-                    <Select
-                        className={styles.select}
-                        data={data}
-                        value={value}
-                        setValue={setValue}
-                    />
+                    <Select data={data} value={value} setValue={setValue} />
                 </div>
             </div>
         </div>
