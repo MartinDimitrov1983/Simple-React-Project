@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from '../pages/home'
 import CreatePage from '../pages/create'
 import EditPage from '../pages/edit'
-import TestPage from '../pages/test'
+import TestPage from '../pages/new'
 const ROUTES = [
     {
         route: '/',
