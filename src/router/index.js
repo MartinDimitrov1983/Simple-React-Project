@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from '../pages/home'
 import CreatePage from '../pages/create'
 import EditPage from '../pages/edit'
+import TestPage from '../pages/test'
 const ROUTES = [
     {
         route: '/',
@@ -16,6 +17,10 @@ const ROUTES = [
     {
         route: '/edit/:id',
         component: EditPage,
+    },
+    {
+        route: '/test',
+        component: TestPage,
     },
 ]
 const Navigation = () => {
